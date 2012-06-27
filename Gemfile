@@ -40,6 +40,7 @@ gem 'jquery-rails'
 
 gem 'slim-rails'
 
-gem 'later_dude', '>= 0.3.1'
+# gem 'later_dude', '>= 0.3.1'
+gem 'later_dude', github: 'insside/later_dude', :branch => "rails3-init"
 
 gem 'simple_form'
