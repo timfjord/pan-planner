@@ -44,3 +44,18 @@ gem 'slim-rails'
 gem 'later_dude', github: 'insside/later_dude', :branch => "rails3-init"
 
 gem 'simple_form'
+
+group :test, :development do
+  gem 'rspec-rails', "~> 2.6"
+end
+
+group :test do
+  gem 'spork', '~> 1.0rc'
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem "guard-spork"
+  gem 'launchy'
+  gem 'database_cleaner'
+end
+
