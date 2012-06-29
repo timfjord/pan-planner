@@ -57,3 +57,5 @@ group :test do
   gem "guard-spork"
 end
 
+gem 'inherited_resources'
+
