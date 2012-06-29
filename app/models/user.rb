@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :memberships
+  has_many :events, :through => :memberships
+  
   attr_accessible :email, :github_url, :name
   
   validates_presence_of :email, :github_url, :name
