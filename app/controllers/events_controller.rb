@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "admin", except: :index
+  
   # GET /events
   # GET /events.json
   def index
