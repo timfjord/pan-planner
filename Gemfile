@@ -55,7 +55,5 @@ group :test do
   gem "capybara"
   gem "guard-rspec"
   gem "guard-spork"
-  gem 'launchy'
-  gem 'database_cleaner'
 end
 
