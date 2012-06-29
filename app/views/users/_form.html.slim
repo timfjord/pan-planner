@@ -1,10 +1,8 @@
-= simple_form_for(@user) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :name
-    = f.input :github_url
-    = f.input :email
-
+= simple_form_for @user, :html => { :class => "form-horizontal" } do |f|
+  = f.input :name
+  = f.input :github_url
+  = f.input :email
   .form-actions
-    = f.button :submit
+    = f.button :submit, :class => 'btn-primary'
+    '
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn'
