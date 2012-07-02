@@ -7,3 +7,52 @@
         width: auto;
     }
 }
+
+#calendar {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.calendar {
+    width: 100%;
+    
+    th {
+    	font-size: 14px;
+    	font-weight: bold;
+    	border-top: 1px solid #ccc;
+    }
+
+    td {
+    	height: 50px;
+    	font-size: 24px;
+    	color: #999;
+    }
+
+    td.weekend {
+    	color: #CDCDCD;
+    }
+
+    td.today{
+    	background-color: #EFEFEF;
+    	color: #666666;
+    }
+
+    td.holiday{
+    	color: red;
+    }
+
+}
+
+#event_header {
+    margin: 10px 0;
+    
+    .year {
+        font-size: 108px;
+    }
+
+    .month {
+        font-size: 42px;
+        margin-top: 10px;
+        color: red;
+    }
+}
