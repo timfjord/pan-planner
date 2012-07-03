@@ -3,6 +3,6 @@
     div.pull-right
       h3 Next event
       p next event text
-    h1.year 2012
-    h2.month April
-  = calendar_for 2009, 1, use_full_day_names: true, first_day_of_week: 1, hide_month_name: true
+    h1.year = @event_date.year
+    h2.month = @event_date.strftime('%B')
+  = test = calendar_for @event_date.year, @event_date.month, use_full_day_names: true, first_day_of_week: 1, hide_month_name: true
