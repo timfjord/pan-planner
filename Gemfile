@@ -50,7 +50,8 @@ group :test, :development do
 end
 
 group :test do
-  gem 'spork', '~> 1.0rc'
+  gem 'spork', github: 'sporkrb/spork'
+  gem 'spork-rails'
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
