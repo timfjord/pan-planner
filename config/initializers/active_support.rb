@@ -13,4 +13,12 @@ class Hash
     end
     result
   end
+  
+  def assert_required_keys(*required_keys)
+    required_keys.flatten!
+    required_keys.each do |k|
+      raise(ArgumentError, "Key #{k} is required") unless has_key?(k)
+    end
+    self
+  end
 end

@@ -6,26 +6,38 @@
     select {
         width: auto;
     }
+    
+    .token-input-list {
+        clear: none;
+    }
 }
 
 #calendar {
-    width: 700px;
+    width: 910px;
     margin: 0 auto;
+    
+    .event {
+        max-width: 120px;
+        overflow: hidden;
+    }
 }
 
 .calendar {
     width: 100%;
     
     th {
+        width: 130px;
     	font-size: 14px;
     	font-weight: bold;
     	border-top: 1px solid #ccc;
+    	padding: 10px 0;
     }
 
     td {
-    	height: 50px;
-    	font-size: 24px;
+    	height: 100px;
     	color: #999;
+    	vertical-align: top;
+    	border: 1px solid #ccc;
     }
 
     td.weekend {

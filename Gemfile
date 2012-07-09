@@ -56,6 +56,7 @@ group :test do
   gem "capybara"
   gem "guard-rspec"
   gem "guard-spork"
+  gem 'database_cleaner'
 end
 
 gem 'inherited_resources'

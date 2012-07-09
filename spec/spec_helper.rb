@@ -9,6 +9,7 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'rspec/autorun'
+  require 'database_cleaner'
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
@@ -29,7 +30,7 @@ Spork.prefork do
     # If you're not using ActiveRecord, or you'd prefer not to run each of your
     # examples within a transaction, remove the following line or assign false
     # instead of true.
-    # config.use_transactional_fixtures = true
+    config.use_transactional_fixtures = false
 
     # If true, the base class of anonymous controllers will be inferred
     # automatically. This will be the default behavior in future versions of
@@ -38,9 +39,16 @@ Spork.prefork do
     
     # factory girl
     config.include FactoryGirl::Syntax::Methods
+    
+    # declare an exclusion filter
+    config.filter_run_excluding :exclude => true
   end
+  
+  # database_cleaner
+  DatabaseCleaner.strategy = :truncation
 end
 
 Spork.each_run do
   FactoryGirl.reload
+  DatabaseCleaner.clean
 end

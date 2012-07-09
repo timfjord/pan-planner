@@ -4,4 +4,20 @@ FactoryGirl.define do
     github_url "test"
     name "Test User"
   end
+  
+  factory :event do
+    title "Dummy event"
+    description "Dummy event description"
+    at { DateTime.tomorrow }
+    
+    # factory :event_with_users do
+    #   ignore do
+    #     users_count 1
+    #   end
+    # 
+    #   after(:create) do |event, evaluator|
+    #     FactoryGirl.create_list(:user, evaluator.users_count, event: event)
+    #   end
+    # end
+  end
 end

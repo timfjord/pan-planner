@@ -3,6 +3,7 @@
     = f.input :title
     = f.input :description
     = f.input :at
+    = f.input :user_tokens, input_html: { data: { load: @event.users } }
     .form-actions
       = f.button :submit, :class => 'btn-primary'
       '

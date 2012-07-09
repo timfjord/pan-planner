@@ -4,7 +4,9 @@ class EventsController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "admin", except: :index
   
   def index
-    @event_date = DateTime.now.change params.symbolize_keys.slice(:year, :month).transform_values(&:to_i)
+    @date_params = params.symbolize_keys.slice(:year, :month).transform_values(&:to_i)
+    @event_date = DateTime.now.change @date_params
+    @events = Event.for_calendar(@event_date)
     index!
   end
 end
