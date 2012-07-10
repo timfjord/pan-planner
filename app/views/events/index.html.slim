@@ -1,8 +1,14 @@
 #calendar
   #event_header
-    div.pull-right
+    div.pull-right.next_event
       h3 Next event
-      p next event text
+      - if @next_event.nil?
+        span No event, go ahead and create one
+      - else
+        p: a href=event_path(@next_event)
+          = @next_event.at.to_formatted_s(:long)
+          ' :
+          = @next_event.title
       a.btn.btn-primary href=new_event_path Add event
     h1.year = @event_date.year
     h2.month = @event_date.strftime('%B')

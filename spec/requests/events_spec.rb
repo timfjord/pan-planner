@@ -22,6 +22,12 @@ describe "Events" do
       page.should have_content(current_date.year)
       page.should have_content(current_date.strftime('%B'))
     end
+    
+    it "should show next event" do
+      event = create(:event, at: DateTime.tomorrow)
+      visit events_path
+      page.should have_selector('div.next_event p', text: event.title)
+    end
   end  
    
   describe "GET /events/new" do

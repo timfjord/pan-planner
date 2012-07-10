@@ -14,10 +14,6 @@ describe Event do
   end
   
   describe '#for_calendar' do
-    it "should be resposible" do
-      Event.should respond_to(:for_calendar)
-    end
-  
     it "should return hash with events, and hash key should be DateTime string" do
       current_date = DateTime.now
       param = { year: current_date.year, month: current_date.month }
@@ -40,6 +36,15 @@ describe Event do
       lambda { Event.for_calendar(year: 2012) }.should raise_error(ArgumentError)
       lambda { Event.for_calendar(month: 2012) }.should raise_error(ArgumentError)
       lambda { Event.for_calendar(year: 2012, month: 12) }.should_not raise_error(ArgumentError)
+    end
+  end
+  
+  describe "#next_event" do
+    it "should return next event" do
+      event = create(:event, at: DateTime.tomorrow)
+      next_event = Event.next_event
+      next_event.should_not be_nil
+      next_event.should == event
     end
   end
 end

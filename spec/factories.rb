@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
     email "test@email.com"
-    github_url "test"
+    github_username "test"
     name "Test User"
   end
   

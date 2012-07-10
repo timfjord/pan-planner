@@ -7,6 +7,7 @@ class EventsController < ApplicationController
     date_params = params.symbolize_keys.slice(:year, :month).transform_values(&:to_i)
     @event_date = DateTime.now.change date_params
     @events = Event.for_calendar(@event_date)
+    @next_event = Event.next_event
     index!
   end
 end
