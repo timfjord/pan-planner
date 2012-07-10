@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   inherit_resources
   
-  http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
+  http_basic_authenticate_with name: ENV['HTTP_USER'], password: ENV['HTTP_PASSWORD'], except: [:index, :show]
   
   def index
     date_params = params.symbolize_keys.slice(:year, :month).transform_values(&:to_i)
