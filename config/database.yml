@@ -39,4 +39,3 @@ production:
   pool: 5
   username: <%= ENV['PAN_PLANNER_DB_USER'] %>
   password: <%= ENV['PAN_PLANNER_DB_PASSWORD'] %>
-  socket: /tmp/mysql.sock
