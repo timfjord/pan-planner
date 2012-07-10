@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: pan_planner_production
+  database: pan_planner
   pool: 5
-  username: root
-  password:
+  username: <%= ENV['PAN_PLANNER_DB_USER'] %>
+  password: <%= ENV['PAN_PLANNER_DB_PASSWORD'] %>
   socket: /tmp/mysql.sock
