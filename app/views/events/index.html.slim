@@ -3,7 +3,7 @@
     div.pull-right.next_event
       h3 Next event
       - if @next_event.nil?
-        span No event, go ahead and create one
+        p No event, go ahead and create one
       - else
         p: a href=event_path(@next_event)
           = @next_event.at.to_formatted_s(:long)
