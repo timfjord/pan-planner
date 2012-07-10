@@ -4,7 +4,7 @@ describe UsersHelper do
   describe "#user_list" do
     it "generate users list with github urls" do
       user = create(:user)
-      helper.user_list(User.all).should match(/<a href=".*github.*#{Regexp.escape(user.github_username)}[^>]>#{Regexp.escape(user.name)}/)
+      helper.user_list(User.all).should match(/<a href=".*github.com\/#{Regexp.escape(user.github_username)}[^>]*>#{Regexp.escape(user.name)}/)
     end
     
     it "should generate generate link with _blank if passed" do
