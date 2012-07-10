@@ -4,6 +4,11 @@ describe "Events" do
   include AuthHelper
   
   describe "GET /events" do
+    it "should be accessible" do
+      visit events_path
+      page.status_code.should be 200
+    end
+    
     it "shows events with calendar" do
       event = create(:event, at: DateTime.now)
       visit events_path
@@ -55,6 +60,14 @@ describe "Events" do
       fill_in "event_user_tokens", with: [user1.id, user2.id].join(',')
       click_button "Create Event"
       
+      page.status_code.should be 200
+    end
+  end
+  
+  describe "GET /events/:event_id" do
+    it "should be accessible" do
+      event = create(:event)
+      visit event_path(event)
       page.status_code.should be 200
     end
   end
