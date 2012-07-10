@@ -4,7 +4,7 @@
      span.pull-left = @event.title
      span.label.label-important.pull-left.event_date = @event.at.to_formatted_s(:long)
 
-  p = @event.description
+  p: pre = @event.description
   
   - unless @event.users.empty?
     strong = 'Responsible'
