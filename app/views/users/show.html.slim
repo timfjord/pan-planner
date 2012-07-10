@@ -9,7 +9,7 @@ p
 p
   strong= model_class.human_attribute_name(:github_username) + ':'
   br
-  = @user.github_username
+  == user_list([@user])
 p
   strong= model_class.human_attribute_name(:email) + ':'
   br

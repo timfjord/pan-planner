@@ -9,7 +9,7 @@
   - unless @event.users.empty?
     strong = 'Responsible'
     br
-    p == user_list(@event.users, target: '_blank')
+    p == user_list(@event.users)
 
   .form-actions
     = link_to t('.back', :default => t("helpers.links.back")), events_path, :class => 'btn'
