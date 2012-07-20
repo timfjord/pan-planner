@@ -14,12 +14,16 @@ class Event < ActiveRecord::Base
   class << self
     
     def for_calendar(date)
-      if date.respond_to?(:year) && date.respond_to?(:month)
-        date = { year: date.year, month: date.month}
-      end
-      raise ArgumentError if (date.keys & [:year, :month]).size < 2
+      if date.is_a? Range
+        range = date
+      else
+        if date.respond_to?(:year) && date.respond_to?(:month)
+          date = { year: date.year, month: date.month}
+        end
+        raise ArgumentError if (date.keys & [:year, :month]).size < 2
 
-      range = DateTime.civil(date[:year], date[:month], 1)..DateTime.civil(date[:year], date[:month], -1)
+        range = DateTime.civil(date[:year], date[:month], 1)..DateTime.civil(date[:year], date[:month], -1)
+      end
       where(at: range).group_by { |e| e.at.strftime('%Y%m%d') }
     end
     

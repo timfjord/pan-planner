@@ -33,6 +33,12 @@ describe "Events" do
       visit events_path
       page.should have_selector('div.next_event p', text: event.title)
     end
+    
+    it "should include edges date" do
+      event = create(:event, at: DateTime.new(2012, 6, 30), title: 'Egde event')
+      visit events_path(year: 2012, month: 7)
+      page.should have_content(event.title)
+    end
   end  
    
   describe "GET /events/new" do

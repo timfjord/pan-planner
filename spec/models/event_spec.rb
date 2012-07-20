@@ -30,6 +30,14 @@ describe Event do
       events.should be_a_kind_of(Hash)
       events.keys.should include(current_date.strftime('%Y%m%d'))
     end
+    
+    it "should allow Range object" do
+      current_date = DateTime.now
+      event = create(:event, at: current_date)
+      events = Event.for_calendar(current_date.beginning_of_month..current_date.end_of_month)
+      events.should be_a_kind_of(Hash)
+      events.keys.should include(current_date.strftime('%Y%m%d'))
+    end
   
     it "should raise ArgumentError when passed wrong params to for_celendar method" do
       lambda { Event.for_calendar }.should raise_error(ArgumentError)
