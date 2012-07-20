@@ -42,10 +42,19 @@ Spork.prefork do
     
     # declare an exclusion filter
     config.filter_run_excluding :exclude => true
-  end
-  
-  # database_cleaner
-  DatabaseCleaner.strategy = :truncation
+    
+    config.before(:suite) do
+      DatabaseCleaner.strategy = :truncation
+    end
+
+    config.before(:each) do
+      DatabaseCleaner.start
+    end
+
+    config.after(:each) do
+      DatabaseCleaner.clean
+    end
+  end  
 end
 
 Spork.each_run do
