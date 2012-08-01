@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/insside/later_dude.git
-  revision: a7ee6b6ec9d883e86e6d924e25d98b129bb1ba64
+  revision: d100c908c92c462042320acb1e39793c0b463d5a
   specs:
     later_dude (0.3.1)
       rails (>= 2.3)
