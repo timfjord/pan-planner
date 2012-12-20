@@ -60,4 +60,5 @@ group :test do
 end
 
 gem 'inherited_resources'
+gem 'redcarpet'
 

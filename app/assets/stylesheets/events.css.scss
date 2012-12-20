@@ -3,74 +3,82 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #new_event {
-    select {
-        width: auto;
-    }
-    
-    .token-input-list {
-        clear: none;
-    }
+  select {
+    width: auto;
+  }
+  
+  .token-input-list {
+    clear: none;
+  }
+  
+  input[type=text] {
+    width: 300px;
+  }
+  
+  textarea {
+    width: 500px;
+  }
 }
 
 #calendar {
-    width: 910px;
-    margin: 0 auto;
-    
-    .event {
-        max-width: 120px;
-        overflow: hidden;
-    }
+  width: 910px;
+  margin: 0 auto;
+  
+  .event {
+    max-width: 120px;
+    overflow: hidden;
+  }
 }
 
 .calendar {
-    width: 100%;
-    
-    th {
-        width: 130px;
-    	font-size: 14px;
-    	font-weight: bold;
-    	border-top: 1px solid #ccc;
-    	padding: 10px 0;
-    }
+  width: 100%;
+  
+  th {
+    width: 130px;
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+  }
 
-    td {
-    	height: 100px;
-    	color: #999;
-    	vertical-align: top;
-    	border: 1px solid #ccc;
-    }
+  td {
+    height: 100px;
+    color: #999;
+    vertical-align: top;
+    border: 1px solid #ccc;
+  }
 
-    td.weekend {
-    	color: #CDCDCD;
-    }
+  td.weekend {
+    color: #CDCDCD;
+  }
 
-    td.today{
-    	background-color: #EFEFEF;
-    	color: #666666;
-    }
+  td.today{
+    background-color: #EFEFEF;
+    color: #666666;
+  }
 
-    td.holiday{
-    	color: red;
-    }
+  td.holiday{
+    color: red;
+  }
 
 }
 
 #event_header {
-    margin: 10px 0;
-    
-    .year {
-        font-size: 108px;
-    }
+  margin: 10px 0;
+  
+  .year {
+    font-size: 108px;
+  }
 
-    .month {
-        font-size: 42px;
-        margin-top: 10px;
-        color: red;
-    }
+  .month {
+    font-size: 42px;
+    margin-top: 10px;
+    color: red;
+  }
 }
 
 #event {
-    .event_date {
-        margin-left: 10px;
-    }
+  .event_date {
+    margin-left: 10px;
+  }
 }
